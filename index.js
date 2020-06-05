@@ -53,7 +53,7 @@ function handleEvent(event) {
   
 }
 
-/*
+
 app.get('/send',(req,res) =>{
     let message = {
         type: 'text',
@@ -102,7 +102,6 @@ app.get('/check',(req,res)=>{
   }
 
 })
-*/
 // listen on port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
