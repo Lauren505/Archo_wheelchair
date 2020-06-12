@@ -34,12 +34,17 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }
+  if(event.message.text === "archo"){
+    state =  event.message.text
+    return client.replyMessage(event.replyToken, { type: 'text', text: "Hi!" });
+  }else{
 
   // create a echoing text message
   const echo = { type: 'text', text: event.message.text };
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
+  }
 }
 
 // listen on port
