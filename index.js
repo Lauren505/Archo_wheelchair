@@ -35,7 +35,6 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
   if(event.message.text === "archo"){
-    state =  event.message.text
     return client.replyMessage(event.replyToken, { type: 'text', text: "Hi!" });
   }else{
 
