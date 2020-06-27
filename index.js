@@ -38,7 +38,7 @@ function handleEvent(event) {
   if(event.message.text === "archo"){
     let message = {
         type: 'text',
-        text: 'Hello World!'
+        text: 'I\'m Archo.'
       };
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
     .then(() => {
@@ -50,10 +50,18 @@ function handleEvent(event) {
     // error handling
     });
     return client.replyMessage(event.replyToken, { type: 'text', text: "Hi!" });
+  }else if(event.message.text === "阿醜在哪"){
+    
+  return client.replyMessage(event.replyToken, "不知道啦");
+    
+  }else if(event.message.text === "阿醜在幹嘛"){
+    
+  return client.replyMessage(event.replyToken, "不知道啦");
+    
   }else{
 
   // create a echoing text message
-  const echo = { type: 'text', text: event.message.text };
+  const echo = { type: 'text', text: "輸入規則: \n輸入:阿醜在哪 查詢阿醜位置\n輸入:阿醜在幹嘛 查詢阿醜動作" };
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
