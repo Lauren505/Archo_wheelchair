@@ -36,8 +36,19 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
   if(event.message.text === "archo"){
-    client.pushMessage("U3c62a1ade09ec47084828d746e778c15","I'm Archo.");
-    console.log("Message pushed");
+    let message = {
+        type: 'text',
+        text: 'Hello World!'
+      };
+    client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
+    .then(() => {
+        console.log("Message pushed")
+        res.send("message sent")
+    })
+    .catch((err) => {
+        res.send("error pushing message")
+    // error handling
+    });
     return client.replyMessage(event.replyToken, { type: 'text', text: "Hi!" });
   }else{
 
