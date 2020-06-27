@@ -61,7 +61,7 @@ function handleEvent(event) {
   }else{
 
   // create a echoing text message
-  const echo = { type: 'text', text: "輸入規則: \n輸入:阿醜在哪 查詢阿醜位置\n輸入:阿醜在幹嘛 查詢阿醜動作" };
+  const echo = { type: 'text', text: "輸入: \n阿醜在哪\n阿醜在幹嘛" };
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
