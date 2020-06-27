@@ -52,11 +52,11 @@ function handleEvent(event) {
     return client.replyMessage(event.replyToken, { type: 'text', text: "Hi!" });
   }else if(event.message.text === "阿醜在哪"){
     
-  return client.replyMessage(event.replyToken, "不知道啦");
+  return client.replyMessage(event.replyToken, { type: 'text', text: "不知道啦" });
     
   }else if(event.message.text === "阿醜在幹嘛"){
     
-  return client.replyMessage(event.replyToken, "不知道啦");
+  return client.replyMessage(event.replyToken, { type: 'text', text: "不知道啦" });
     
   }else{
 
@@ -67,6 +67,22 @@ function handleEvent(event) {
   return client.replyMessage(event.replyToken, echo);
   }
 }
+
+app.get('/send',(req,res) =>{
+    let message = {
+        type: 'text',
+        text: 'Hello World!'
+      };
+    client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
+    .then(() => {
+        console.log("Message pushed")
+        res.send("message sent")
+    })
+    .catch((err) => {
+        res.send("error pushing message")
+    // error handling
+    });
+})
 
 // listen on port
 const port = process.env.PORT || 3000;
