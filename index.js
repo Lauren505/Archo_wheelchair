@@ -37,6 +37,8 @@ function handleEvent(event) {
   }
   if(event.message.text === "archo"){
     return client.replyMessage(event.replyToken, { type: 'text', text: "Hi!" });
+    client.pushMessage("U3c62a1ade09ec47084828d746e778c15","I'm Archo.")
+    console.log("Message pushed")
   }else{
 
   // create a echoing text message
