@@ -84,10 +84,12 @@ app.get('/send/:name',(req,res) =>{
     });
 })
 
+app.use(bodyParser.json());       // 解析POST參數的JSON資料
+ 
 app.post('/test',function(req,res){   // JSON資料的處理程式
   var json=req.body;   // 取出POST資料本體
  
-  console.log(json);
+  console.log(json.Direction);
 });
 
 /*app.get('/test',(req,res) =>{
