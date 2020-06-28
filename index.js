@@ -92,7 +92,7 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
   console.log(json);
   let message = {
         type: 'text',
-        text: req.body
+        text: JSON.stringify(req.body)
       };
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
     .then(() => {
