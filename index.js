@@ -84,7 +84,13 @@ app.get('/send/:name',(req,res) =>{
     });
 })
 
-app.get('/test',(req,res) =>{
+app.post('/test',function(req,res){   // JSON資料的處理程式
+  var json=req.body;   // 取出POST資料本體
+ 
+  console.log(json.Direction);
+});
+
+/*app.get('/test',(req,res) =>{
     let message = {
         type: 'text',
         text: 'y'
@@ -98,7 +104,7 @@ app.get('/test',(req,res) =>{
         res.send("error pushing message")
     // error handling
     });
-})
+})*/
 
 // listen on port
 const port = process.env.PORT || 3000;
