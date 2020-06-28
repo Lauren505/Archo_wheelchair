@@ -2,6 +2,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
+var bodyParser = require('body-parser')
 
 // create LINE SDK config from env variables
 const config = {
