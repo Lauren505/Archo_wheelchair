@@ -17,9 +17,13 @@ const client = new line.Client(config);
 // about Express itself: https://expressjs.com/
 const app = express();
 
+app.use(bodyParser.json());
+
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post('/callback', line.middleware(config), (req, res) => {
+  var json=req.body;   // 取出POST資料本體
+  console.log(json);
   Promise
     .all(req.body.events.map(handleEvent))
     .then((result) => res.json(result))
@@ -84,8 +88,6 @@ app.get('/send/:name',(req,res) =>{
     // error handling
     });
 })
-
-app.use(bodyParser.json());
 
 app.post('/test',function(req,res){   // JSON資料的處理程式
   var json=req.body;   // 取出POST資料本體
