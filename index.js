@@ -100,16 +100,20 @@ app.get('/send',(req,res) =>{
     // error handling
     });
 })
-
+app.post('/test',(req,res) {
+    console.log(req.query.id);
+    console.log(req.body.name);
+    console.log(req.body.tel);
+});
 app.get('/test',(req,res) =>{
     let message = {
         type: 'text',
-        text: req.body
+        text: res.body
       };
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
     .then(() => {
         console.log("Message pushed")
-        res.send("message sent: " + req.body)
+        res.send("message sent: " + res.body)
     })
     .catch((err) => {
         res.send("error pushing message")
