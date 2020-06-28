@@ -101,7 +101,7 @@ app.get('/send',(req,res) =>{
     });
 })
 
-app.get('/test',(req,res) =>{
+app.get('/temp',(req,res) =>{
     let message = {
         type: 'text',
         text: 'y'
