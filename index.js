@@ -104,7 +104,7 @@ app.get('/send',(req,res) =>{
 app.get('/test',(req,res) =>{
     let message = {
         type: 'text',
-        text: req.body
+        text: 'y'
       };
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
     .then(() => {
