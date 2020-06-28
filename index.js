@@ -3,7 +3,7 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 var bodyParser = require('body-parser');
-var dir="";
+var dir = "";
 
 // create LINE SDK config from env variables
 const config = {
@@ -33,6 +33,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
 // event handler
 function handleEvent(event) {
   console.log(event)
+  console.log(dir)
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
     return Promise.resolve(null);
