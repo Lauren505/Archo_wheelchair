@@ -103,6 +103,9 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
         res.send("error pushing message")
     // error handling
     });
+  if(event.message.text === "what"){
+  return client.replyMessage(event.replyToken, message);
+  }
 });
 
 /*app.get('/test',(req,res) =>{
