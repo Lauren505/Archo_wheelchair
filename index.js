@@ -38,7 +38,7 @@ function handleEvent(event) {
   if(event.message.text === "archo"){
     let message = {
         type: 'text',
-        text: req.params.name
+        text: req.body
       };
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
     .then(() => {
@@ -50,23 +50,6 @@ function handleEvent(event) {
     // error handling
     });
     return client.replyMessage(event.replyToken, { type: 'text', text: "Hi!" });
-  }else if(event.message.text === "try"){
-    
-    app.get('/try/:name',(req,res) =>{
-        let message = {
-            type: 'text',
-            text: req.params.name
-          };
-        client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
-        .then(() => {
-            console.log("Message pushed")
-            res.send("message sent: " + req.params.name)
-        })
-        .catch((err) => {
-            res.send("error pushing message")
-        // error handling
-        });
-    })
   }else if(event.message.text === "阿醜在哪"){
     
   return client.replyMessage(event.replyToken, { type: 'text', text: "不知道啦" });
