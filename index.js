@@ -92,7 +92,7 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
   console.log(json);
   let message = {
         type: 'text',
-        text: JSON.stringify(req.body)
+        text: JSON.stringify(req.body.Direction)
       };
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
     .then(() => {
@@ -103,9 +103,9 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
         res.send("error pushing message")
     // error handling
     });
-  if(event.message.text === "what"){
+  /*if(event.message.text === "what"){
   return client.replyMessage(event.replyToken, message);
-  }
+  }*/
 });
 
 /*app.get('/test',(req,res) =>{
