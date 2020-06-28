@@ -85,7 +85,23 @@ function handleEvent(event) {
   }
 }
 
-app.get('/send/:name',(req,res) =>{
+app.get('/send',(req,res) =>{
+    let message = {
+        type: 'text',
+        text: 'Hello world!';
+      };
+    client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
+    .then(() => {
+        console.log("Message pushed")
+        res.send("message sent: ")
+    })
+    .catch((err) => {
+        res.send("error pushing message")
+    // error handling
+    });
+})
+
+app.get('/test/:name',(req,res) =>{
     let message = {
         type: 'text',
         text: req.params.name
