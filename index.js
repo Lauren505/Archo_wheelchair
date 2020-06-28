@@ -22,8 +22,6 @@ app.use(bodyParser.json());
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post('/callback', line.middleware(config), (req, res) => {
-  var json=req.body;   // 取出POST資料本體
-  console.log(json);
   Promise
     .all(req.body.events.map(handleEvent))
     .then((result) => res.json(result))
@@ -43,7 +41,7 @@ function handleEvent(event) {
   if(event.message.text === "archo"){
     let message = {
         type: 'text',
-        text: JSON.stringify(req.body.Direction)
+        text: JSON.stringify(req.body)
       };
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
     .then(() => {
