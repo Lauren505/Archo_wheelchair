@@ -2,7 +2,8 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var dir="";
 
 // create LINE SDK config from env variables
 const config = {
@@ -39,7 +40,7 @@ function handleEvent(event) {
   if(event.message.text === "archo"){
     let message = {
         type: 'text',
-        text: JSON.stringify(req.body)
+        text: dir
       };
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
     .then(() => {
@@ -103,6 +104,7 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
         res.send("error pushing message")
     // error handling
     });
+  dir = JSON.stringify(req.body.Direction);
   if(event.message.text === "what"){
   return client.replyMessage(event.replyToken, 'yes');
   }
