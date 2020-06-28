@@ -60,6 +60,10 @@ function handleEvent(event) {
     
   return client.replyMessage(event.replyToken, { type: 'text', text: "不知道啦" });
     
+  }else if(event.message.text === "what"){
+    
+  return client.replyMessage(event.replyToken, yourdata);
+    
   }else{
 
   // create a echoing text message
