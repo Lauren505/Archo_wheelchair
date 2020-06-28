@@ -116,7 +116,11 @@ app.get('/test',(req,res) =>{
     // error handling
     });
 })
-
+app.post('/sth', function(req, res) {
+    console.log(req.query.id);
+    console.log(req.body.name);
+    console.log(req.body.tel);
+});
 // listen on port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
