@@ -84,6 +84,7 @@ app.get('/send/:name',(req,res) =>{
     });
 })
 app.use(express.bodyParser());
+
 app.post('/test',function(req,res){   // JSON資料的處理程式
   var json=req.body;   // 取出POST資料本體
  
