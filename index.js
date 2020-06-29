@@ -94,7 +94,7 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
   .catch((err) => {
       res.send("error pushing message")
   // error handling
-  }});
+  });}
   yourdata = req.body.Direction;
 });
 
