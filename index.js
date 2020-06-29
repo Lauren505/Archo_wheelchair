@@ -38,31 +38,14 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
   if(event.message.text === "archo"){
-    let message = {
-        type: 'text',
-        text: yourdata
-      };
-    client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
-    .then(() => {
-        console.log("Message pushed")
-      console.log(typeof message);
-      
-        res.send("receive archo from line")
-    })
-    .catch((err) => {
-        res.send("error pushing message")
-    // error handling
-    });
-    return client.replyMessage(event.replyToken, { type: 'text', text: "Hi!" });
+    
+  return client.replyMessage(event.replyToken, { type: 'text', text: "Hi!" });
+    
   }else if(event.message.text === "阿醜在哪"){
     
   return client.replyMessage(event.replyToken, { type: 'text', text: "不知道啦" });
     
   }else if(event.message.text === "阿醜在幹嘛"){
-    
-  return client.replyMessage(event.replyToken, { type: 'text', text: "不知道啦" });
-    
-  }else if(event.message.text === "what"){
     
   return client.replyMessage(event.replyToken, { type: 'text', text: yourdata });
     
