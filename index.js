@@ -3,7 +3,7 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 var bodyParser = require('body-parser');
-let yourdata = "";
+var yourdata = "";
 
 // create LINE SDK config from env variables
 const config = {
@@ -108,7 +108,7 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
         res.send("error pushing message")
     // error handling
     });
-  yourdata = JSON.stringify(req.body.Direction);
+  var yourdata = JSON.stringify(req.body.Direction);
   console.log(yourdata);
 });
 
