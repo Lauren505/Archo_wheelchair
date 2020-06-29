@@ -38,6 +38,7 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
   if(event.message.text === "archo"){
+    console.log(typeof yourdata);
     let message = {
         type: 'text',
         text: yourdata
@@ -46,7 +47,7 @@ function handleEvent(event) {
     .then(() => {
         console.log("Message pushed")
       console.log(typeof message);
-      console.log(typeof yourdata);
+      
         res.send("receive archo from line")
     })
     .catch((err) => {
