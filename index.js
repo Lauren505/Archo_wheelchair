@@ -38,7 +38,8 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
   if(event.message.text === "archo"){
-    console.log(typeof yourdata);
+    console.log("yourdata archo: ", yourdata);
+    console.log("typeof yourdata archo: ", typeof yourdata);
     let message = {
         type: 'text',
         text: yourdata
@@ -118,7 +119,8 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
   console.log("req.body.Direction: ", req.body.Direction);
   console.log("typeof req.body.Direction: ", typeof req.body.Direction);
 });
-
+console.log("yourdata after: ", yourdata);
+console.log("typeof yourdata after: ", typeof yourdata);
 
 // listen on port
 const port = process.env.PORT || 3000;
