@@ -40,9 +40,11 @@ function handleEvent(event) {
   if(event.message.text === "archo"){
     console.log("yourdata archo: ", yourdata);
     console.log("typeof yourdata archo: ", typeof yourdata);
+    console.log("yourdata archo: ", String(yourdata));
+    console.log("typeof yourdata archo: ", String(yourdata));
     let message = {
         type: 'text',
-        text: yourdata
+        text: String(yourdata)
       };
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
     .then(() => {
