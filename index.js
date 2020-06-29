@@ -64,7 +64,7 @@ function handleEvent(event) {
     
   }else if(event.message.text === "what"){
     
-  return client.replyMessage(event.replyToken, yourdata);
+  return client.replyMessage(event.replyToken, { type: 'text', text: yourdata });
     
   }else{
 
