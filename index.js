@@ -81,19 +81,14 @@ app.use(bodyParser.json());
 app.post('/test',function(req,res){   // JSON資料的處理程式
   var json=req.body;   // 取出POST資料本體
   console.log(json);
-  let message = {
-        type: 'text',
-        text: JSON.stringify(req.body.Direction)
-      };
-    client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
-    .then(() => {
-        console.log("Message pushed")
-        res.send("msg from post")
-    })
-    .catch((err) => {
-        res.send("error pushing message")
-    // error handling
-    });
+  .then(() => {
+      console.log("Message pushed")
+      res.send("msg from post")
+  })
+  .catch((err) => {
+      res.send("error pushing message")
+  // error handling
+  });
   yourdata = req.body.Direction;
 });
 
