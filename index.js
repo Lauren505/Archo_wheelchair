@@ -81,14 +81,14 @@ app.use(bodyParser.json());
 app.post('/test',function(req,res){   // JSON資料的處理程式
   var json=req.body;   // 取出POST資料本體
   console.log(json);
-  .then(() => {
+  /*.then(() => {
       console.log("Message pushed")
       res.send("msg from post")
   })
   .catch((err) => {
       res.send("error pushing message")
   // error handling
-  });
+  });*/
   yourdata = req.body.Direction;
 });
 
