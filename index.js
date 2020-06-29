@@ -112,7 +112,7 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
         res.send("error pushing message")
     // error handling
     });
-  var yourdata = JSON.stringify(req.body.Direction);
+  var yourdata = req.body.Direction;
   console.log(yourdata);
 });
 
