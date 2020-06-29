@@ -45,6 +45,8 @@ function handleEvent(event) {
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15",message)
     .then(() => {
         console.log("Message pushed")
+      console.log(typeof message);
+      console.log(typeof yourdata);
         res.send("receive archo from line")
     })
     .catch((err) => {
@@ -68,6 +70,7 @@ function handleEvent(event) {
 
   // create a echoing text message
   const echo = { type: 'text', text: "輸入: \n阿醜在哪\n阿醜在幹嘛" };
+  console.log(typeof echo);
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
