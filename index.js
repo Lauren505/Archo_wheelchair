@@ -4,6 +4,7 @@ const line = require('@line/bot-sdk');
 const express = require('express');
 var bodyParser = require('body-parser');
 var yourdata = "";
+var name = "";
 
 // create LINE SDK config from env variables
 const config = {
@@ -37,22 +38,26 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }
-  if(event.message.text === "archo"){
+  if(event.message.text.includes("name:")){
+  name = event.message.text.split(":")[1];
+  return client.replyMessage(event.replyToken, { type: 'text', text: "Hi! I'm "+name });
     
-  return client.replyMessage(event.replyToken, { type: 'text', text: "Hi!" });
+  }else if(event.message.text === name){
     
-  }else if(event.message.text === "阿醜在哪"){
+  return client.replyMessage(event.replyToken, { type: 'text', text: "Hi! I'm "+name });
+    
+  }else if(event.message.text === "where"){
     
   return client.replyMessage(event.replyToken, { type: 'text', text: "不知道啦" });
     
-  }else if(event.message.text === "阿醜在幹嘛"){
+  }else if(event.message.text === "?"){
     
   return client.replyMessage(event.replyToken, { type: 'text', text: yourdata });
     
   }else{
 
   // create a echoing text message
-  const echo = { type: 'text', text: "輸入: \n阿醜在哪\n阿醜在幹嘛" };
+  const echo = { type: 'text', text: "輸入: \nwhere\n?\nname:___" };
   console.log(typeof echo);
 
   // use reply API
