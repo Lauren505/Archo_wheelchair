@@ -113,7 +113,10 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
     // error handling
     });
   var yourdata = req.body.Direction;
-  console.log(yourdata);
+  console.log("yourdata: ", yourdata);
+  console.log("typeof yourdata: ", typeof yourdata);
+  console.log("req.body.Direction: ", req.body.Direction);
+  console.log("typeof req.body.Direction: ", typeof req.body.Direction);
 });
 
 
