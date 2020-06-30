@@ -68,10 +68,6 @@ function handleEvent(event) {
 app.use(bodyParser.json());
 
 app.post('/send',(req,res) =>{
-  var json=req.body;   // 取出POST資料本體
-  console.log(json);
-  console.log(req.body.Direction);
-  concole.log(typeof req.body.Direction);
     let message = {
         type: 'text',
         text: "靠邀喔"
