@@ -74,9 +74,9 @@ app.post('/send',(req,res) =>{
   concole.log(typeof req.body.Direction);
     let message = {
         type: 'text',
-        text: req.body.Direction
+        text: "靠邀喔"
       };
-    client.pushMessage("U3c62a1ade09ec47084828d746e778c15", message)
+    client.pushMessage("Uaee8b17f4a880c509dc1a8e92938d060", message)
     .then(() => {
         console.log("Message pushed")
         res.send("message sent: ")
