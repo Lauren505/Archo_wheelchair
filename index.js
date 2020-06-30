@@ -91,7 +91,8 @@ app.post('/test',function(req,res){   // JSON資料的處理程式
   var json=req.body.Direction;   // 取出POST資料本體
   console.log(json);
   if (req.body.Direction === "Need help!"){
-  client.pushMessage("U3c62a1ade09ec47084828d746e778c15",{ type: 'text', text: req.body.Direction })
+    console.log("Here!");
+  client.pushMessage("U3c62a1ade09ec47084828d746e778c15",{ type: 'text', text: "Need help!" })
   .then(() => {
       console.log("Message pushed")
       res.send("msg from post")
