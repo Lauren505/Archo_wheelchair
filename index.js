@@ -70,7 +70,7 @@ app.post('/send',(req,res) =>{
         type: 'text',
         text: req.body
       };
-    client.pushMessage("U3c62a1ade09ec47084828d746e778c15", message)
+    client.pushMessage("U3c62a1ade09ec47084828d746e778c15", req.body)
     .then(() => {
         console.log("Message pushed")
         res.send("message sent: ")
