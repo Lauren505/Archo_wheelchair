@@ -72,7 +72,7 @@ app.post('/send',(req,res) =>{
         type: 'text',
         text: req.body.message
       };
-    client.pushMessage("U3c62a1ade09ec47084828d746e778c15", message)
+    client.pushMessage(req.body.user, message)
     .then(() => {
         console.log("Message pushed")
         res.send("message sent: ")
