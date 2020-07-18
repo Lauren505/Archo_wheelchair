@@ -70,7 +70,7 @@ app.use(bodyParser.json());
 app.post('/send',(req,res) =>{
     let message = {
         type: 'text',
-        text: '哈囉'
+        text: req.body.message
       };
     client.pushMessage("U3c62a1ade09ec47084828d746e778c15", message)
     .then(() => {
