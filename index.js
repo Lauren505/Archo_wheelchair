@@ -65,12 +65,14 @@ function handleEvent(event) {
   }
 }
 
+app.use(bodyParser.json());
+
 app.post('/send',(req,res) =>{
     let message = {
         type: 'text',
-        text: req.body
+        text: '哈囉'
       };
-    client.pushMessage("U3c62a1ade09ec47084828d746e778c15", req.body)
+    client.pushMessage("U3c62a1ade09ec47084828d746e778c15", message)
     .then(() => {
         console.log("Message pushed")
         res.send("message sent: ")
@@ -80,8 +82,6 @@ app.post('/send',(req,res) =>{
     // error handling
     });
 })
-
-app.use(bodyParser.json());
 
 app.post('/test',function(req,res){   // JSON資料的處理程式
   var json=req.body.Direction;   // 取出POST資料本體
